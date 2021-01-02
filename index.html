@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <script src="jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive Menu</title>
+
+</head>
+<body>
+        <nav>
+            <div><i class="fas fa-bars"></i></div>
+            <ul>
+                <li><a href="#">Anasayfa</a></li>
+                <li><a href="#">Urunler<i class="fas fa-sort-down"></i></a>
+                        <ul>
+                            <li><a href="#">AltMenu</a></li>
+                            <li><a href="#">AltMenu2</a></li>
+                            <li><a href="#">AltMenu3</a></li>
+                        </ul>
+
+
+
+                <li><a href="#">Hizmetlerimiz</a></li>
+                <li><a href="#">Hakkimizda<i class="fas fa-sort-down"></i></a>
+                        <ul>
+                            <li><a href="">Vizyon</a></li>
+                            <li><a href="">Misyon</a></li>
+                        </ul>
+                </li> 
+                <li><a href="#">Iletisim</a></li>
+            </ul>
+
+        </nav>
+        <script>
+
+            $(document).ready(function(){
+                $("nav div").click(function(){
+                    $("ul").slideToggle();
+                    $("ul ul").css("display","none")
+                })
+                $("ul li").click(function(){
+                    $("ul ul").slideUp();
+                    $(this).find("ul").slideToggle()
+                })
+                $(window).resize(function(){
+                    if($(window).width()>700){
+                        $("ul").removeAttr("style")
+                    }
+                })
+
+            });
+        </script>
+</body>
+</html>
